@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Silverjack</title>
+
+		<link href="css/styles.css" rel="stylesheet" />
+        <style>
+
+        </style>
+
+    </head>
+
+    <body>
 <?php
 
 $deck = array();
@@ -7,16 +22,52 @@ for($i = 0; $i < 52; $i++) {
 }
 
 shuffle($deck);
-print_r($deck);
+//print_r($deck);
 
 echo "<br /><br />";
 $lastCard =  array_pop($deck);
 $suitArray = array("clubs", "diamonds", "hearts", "spades");
 
-echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/1.png' />";
+//echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/1.png' />";
 
-$cardToDisplay = ($lastCard % 13) + 1;
-echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+echo "<img src='avatars/avatar_josh.png' />";
+$sum1 = 0;
+for($i = 0; $i < 6; $i++){
+	$lastCard =  array_pop($deck);
+	$cardToDisplay = ($lastCard % 13) + 1;
+	$sum1 = $sum1 + $cardToDisplay;
+	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+}
+echo $sum1."<br />";
+
+echo "<img src='avatars/avatar_mauro.png' />";
+$sum2 = 0;
+for($i = 0; $i < 4; $i++){
+	$lastCard =  array_pop($deck);
+	$cardToDisplay = ($lastCard % 13) + 1;
+	$sum2 = $sum2 + $cardToDisplay;
+	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+}
+echo "<br />";
+
+echo "<img src='avatars/avatar_quinn.png' />";
+$sum3 = 0;
+for($i = 0; $i < 5; $i++){
+	$lastCard =  array_pop($deck);
+	$cardToDisplay = ($lastCard % 13) + 1;
+	$sum3 = $sum3 + $cardToDisplay;
+	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+}
+echo "<br />";
+
+echo "<img src='avatars/avatar_stephen.png' />";
+$sum4 = 0;
+for($i = 0; $i < 6; $i++){
+	$lastCard =  array_pop($deck);
+	$cardToDisplay = ($lastCard % 13) + 1;
+	$sum4 = $sum4 + $cardToDisplay;
+	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+}
 
 /*
 $prices = array(); //initializes an empty array
@@ -73,3 +124,5 @@ foreach ($prices as $item => $v) {
 }
 */
 ?>
+    </body>
+</html>
