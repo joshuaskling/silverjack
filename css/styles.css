@@ -1,0 +1,16 @@
+body {
+	background: #83AD83;
+	width: 90%;
+	padding: 1em;
+	text-align: center;
+}
+
+img {
+	border: dotted black 1px;
+	padding:1em;
+	margin: auto;
+}
+
+h1 {
+	color:blue;
+}
