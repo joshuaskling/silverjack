@@ -30,25 +30,48 @@ $suitArray = array("clubs", "diamonds", "hearts", "spades");
 
 //echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/1.png' />";
 
+
+echo "<table border = 1>";
+
+
+
+echo "<tr>";
+echo "<td>";
 echo "<img src='avatars/avatar_josh.png' />";
+echo "</td>";
 $sum1 = 0;
 for($i = 0; $i < 6; $i++){
 	$lastCard =  array_pop($deck);
 	$cardToDisplay = ($lastCard % 13) + 1;
 	$sum1 = $sum1 + $cardToDisplay;
+	echo "<td>";
 	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+	echo "</td>";
 }
-echo $sum1."<br />";
+echo "<td>".$sum1."</td>";
+echo "</tr>";
 
+
+
+echo "<tr>";
+echo "<td>";
 echo "<img src='avatars/avatar_mauro.png' />";
+echo "</td>";
 $sum2 = 0;
 for($i = 0; $i < 4; $i++){
 	$lastCard =  array_pop($deck);
 	$cardToDisplay = ($lastCard % 13) + 1;
 	$sum2 = $sum2 + $cardToDisplay;
+	echo "<td>";
 	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+	echo "</td>";
 }
-echo "<br />";
+echo "<td></td><td></td><td>".$sum2."</td>";
+echo "</tr>";
+
+
+
+
 
 echo "<img src='avatars/avatar_quinn.png' />";
 $sum3 = 0;
@@ -60,6 +83,9 @@ for($i = 0; $i < 5; $i++){
 }
 echo "<br />";
 
+
+
+
 echo "<img src='avatars/avatar_stephen.png' />";
 $sum4 = 0;
 for($i = 0; $i < 6; $i++){
@@ -68,6 +94,8 @@ for($i = 0; $i < 6; $i++){
 	$sum4 = $sum4 + $cardToDisplay;
 	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
 }
+
+echo "</table>";
 
 /*
 $prices = array(); //initializes an empty array
