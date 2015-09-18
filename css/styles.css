@@ -2,18 +2,19 @@ body {
 	background: #83AD83;
 	width: 90%;
 	padding: 1em;
-	text-align: center;
 }
 
+/*Thats my suggestion but you can change it if you want*/
 img {
-	border: dotted black 1px;
+/*	background:white;*/
 	padding:1em;
-	margin: auto;
+/*	box-shadow: 2px 2px 2px 2px black;*/
 }
 
 h1 {
 	color:blue;
 }
+
 
 table{
 	display: inline-block;
@@ -34,4 +35,16 @@ button{
 .buttonPosition{
 	position: absolute; 
 	bottom: -100px;
+
+/*
+table {
+	border:2px black;
+	border-radius:5px;
 }
+
+td {
+	min-width: 2em;
+	text-align: center;
+	background: white;
+}
+*/
