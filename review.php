@@ -13,6 +13,7 @@
     </head>
 
     <body>
+    	<h1>Silverjack</h1>
 <?php
 
 $deck = array();
@@ -30,8 +31,8 @@ $suitArray = array("clubs", "diamonds", "hearts", "spades");
 
 //echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/1.png' />";
 
-
-echo "<table border = 1>";
+$sum = array();
+echo "<table>";
 
 
 
@@ -39,16 +40,22 @@ echo "<tr>";
 echo "<td>";
 echo "<img src='avatars/avatar_josh.png' />";
 echo "</td>";
-$sum1 = 0;
+$sum[0] = 0;
+$cards = rand(4,6);
 for($i = 0; $i < 6; $i++){
-	$lastCard =  array_pop($deck);
-	$cardToDisplay = ($lastCard % 13) + 1;
-	$sum1 = $sum1 + $cardToDisplay;
-	echo "<td>";
-	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
-	echo "</td>";
+	if($i < $cards){
+		$lastCard =  array_pop($deck);
+		$cardToDisplay = ($lastCard % 13) + 1;
+		$sum[0] = $sum[0] + $cardToDisplay;
+		echo "<td>";
+		echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+		echo "</td>";
+	} else{
+		echo "<td></td>";
+	}
+
 }
-echo "<td>".$sum1."</td>";
+echo "<td>".$sum[0]."</td>";
 echo "</tr>";
 
 
@@ -57,45 +64,135 @@ echo "<tr>";
 echo "<td>";
 echo "<img src='avatars/avatar_mauro.png' />";
 echo "</td>";
-$sum2 = 0;
-for($i = 0; $i < 4; $i++){
-	$lastCard =  array_pop($deck);
-	$cardToDisplay = ($lastCard % 13) + 1;
-	$sum2 = $sum2 + $cardToDisplay;
-	echo "<td>";
-	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
-	echo "</td>";
+$sum[1] = 0;
+$cards = rand(4,6);
+for($i = 0; $i < 6; $i++){
+	if($i < $cards){
+		$lastCard =  array_pop($deck);
+		$cardToDisplay = ($lastCard % 13) + 1;
+		$sum[1] = $sum[1] + $cardToDisplay;
+		echo "<td>";
+		echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+		echo "</td>";
+	} else{
+		echo "<td></td>";
+	}
 }
-echo "<td></td><td></td><td>".$sum2."</td>";
+echo "<td>".$sum[1]."</td>";
 echo "</tr>";
 
 
 
 
-
+echo "<tr>";
+echo "<td>";
 echo "<img src='avatars/avatar_quinn.png' />";
-$sum3 = 0;
-for($i = 0; $i < 5; $i++){
-	$lastCard =  array_pop($deck);
-	$cardToDisplay = ($lastCard % 13) + 1;
-	$sum3 = $sum3 + $cardToDisplay;
-	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
-}
-echo "<br />";
-
-
-
-
-echo "<img src='avatars/avatar_stephen.png' />";
-$sum4 = 0;
+echo "</td>";
+$sum[2] = 0;
+$cards = rand(4,6);
 for($i = 0; $i < 6; $i++){
-	$lastCard =  array_pop($deck);
-	$cardToDisplay = ($lastCard % 13) + 1;
-	$sum4 = $sum4 + $cardToDisplay;
-	echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+	if($i < $cards){
+		$lastCard =  array_pop($deck);
+		$cardToDisplay = ($lastCard % 13) + 1;
+		$sum[2] = $sum[2] + $cardToDisplay;
+		echo "<td>";
+		echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+		echo "</td>";
+	} else{
+		echo "<td></td>";
+	}
 }
+echo "<td>".$sum[2]."</td>";
+echo "</tr>";
+
+
+
+echo "<tr>";
+echo "<td>";
+echo "<img src='avatars/avatar_stephen.png' />";
+echo "</td>";
+$sum[3] = 0;
+$cards = rand(4,6);
+for($i = 0; $i < 6; $i++){
+	if($i < $cards){
+		$lastCard =  array_pop($deck);
+		$cardToDisplay = ($lastCard % 13) + 1;
+		$sum[3] = $sum[3] + $cardToDisplay;
+		echo "<td>";
+		echo "<img src='cards/" . $suitArray[floor($lastCard)/13] . "/". $cardToDisplay . ".png' />";
+		echo "</td>";
+	} else{
+		echo "<td></td>";
+	}
+}
+echo "<td>".$sum[3]."</td>";
+echo "</tr>";
+
+$maxvalue = -1;
+
+for($i = 0; $i < 4;$i++){
+	if($sum[$i] <= 42 && $sum[$i] > $maxvalue){
+		$maxvalue = $sum[$i];
+	}
+}
+
+echo "<tr>";
+echo "<td>";
+echo "</td>";
+echo "<td>";
+echo "</td>";
+echo "<td>";
+echo "</td>";
+echo "<td>";
+echo "</td>";
+echo "<td class=\"buttonPosition\">";
+echo "<button type=\"button\" onclick=\"location.href='review.php';\">Play again</button>";
+echo "</td>";
+echo "<td>";
+echo "</td>";
+echo "<td>";
+echo "</td>";
+echo "<td>";
+echo "</td>";
+echo "</tr>";
 
 echo "</table>";
+
+echo "<table>";
+echo "<tr>";
+echo "<td>";
+if($sum[0] == $maxvalue){
+	echo "Josh wins";
+}
+echo "</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<td>";
+if($sum[1] == $maxvalue){
+	echo "Mauro wins";
+}
+echo "</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<td>";
+if($sum[2] == $maxvalue){
+	echo "Quinn wins";
+}
+echo "</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<td>";
+if($sum[3] == $maxvalue){
+	echo "Stephen wins";
+}
+echo "</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<td>";
+echo "</td>";
+echo "</tr>";
+echo "</table>";
+
 
 /*
 $prices = array(); //initializes an empty array

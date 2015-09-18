@@ -14,3 +14,24 @@ img {
 h1 {
 	color:blue;
 }
+
+table{
+	display: inline-block;
+}
+
+td{
+	height: 134px;
+	width: 100px;
+}
+
+button{
+	height: 30px;
+	width: 100px;
+	font-weight:bold;
+	background-color: green;
+}
+
+.buttonPosition{
+	position: absolute; 
+	bottom: -100px;
+}
