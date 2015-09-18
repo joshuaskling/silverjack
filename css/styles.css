@@ -2,15 +2,25 @@ body {
 	background: #83AD83;
 	width: 90%;
 	padding: 1em;
-	text-align: center;
 }
 
 img {
-	border: dotted black 1px;
+	background:white;
 	padding:1em;
-	margin: auto;
+	box-shadow: 2px 2px 2px 2px black;
 }
 
 h1 {
 	color:blue;
+}
+
+table {
+	border:2px black;
+	border-radius:5px;
+}
+
+td {
+	min-width: 2em;
+	text-align: center;
+	background: white;
 }
